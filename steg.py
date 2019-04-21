@@ -17,3 +17,8 @@ def gen_text(gen, num, i2w):
                 temp += word
                 temp += ' '
             f.write(temp)
+
+gen = torch.load('gen.model')
+gen.eval()
+i2w = torch.load('data/image_coco.i2w')
+gen_text(gen, 100, i2w)            
